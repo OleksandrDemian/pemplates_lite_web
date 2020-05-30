@@ -17,6 +17,7 @@
 	const search = async () => {
 		//todo: topic:boilerplate+topic:starter-kit
 		if(searchValue.length < 1){
+			result = null;
 			return;
 		}
 
@@ -94,7 +95,7 @@
 
 	<div id="footer" class="row justify-content-center">
 		<div id="footer-container" class="col-lg-6 col-md-12">
-			Made by <a target="_blank" href="https://twitter.com/9zemian5">Oleksandr Demian</a>
+			<p>Made by <a target="_blank" href="https://twitter.com/9zemian5">Oleksandr Demian</a></p>
 		</div>
 	</div>
 </div>
