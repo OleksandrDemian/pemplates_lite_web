@@ -1,5 +1,5 @@
 <script>
-	import Loading from "./Loading.svelte";
+	import Loading from "./components/Loading.svelte";
 	import SearchResult from "./SearchResult.svelte";
 
 	let searchValue = "";
