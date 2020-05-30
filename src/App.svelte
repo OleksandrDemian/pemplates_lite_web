@@ -4,6 +4,7 @@
 
 	let searchValue = "";
 	let filterValue = "";
+	let topicValue = "template";
 	let isSearching = false;
 	let result = null;
 
@@ -15,11 +16,15 @@
 
 	const search = async () => {
 		//todo: topic:boilerplate+topic:starter-kit
+		if(searchValue.length < 1){
+			return;
+		}
+
 		isSearching = true;
 		filterValue = searchValue;
 		try {
 			// const url = `https://api.github.com/search/repositories?q=${search_value}+topic:template&sort=stars`;
-			const url = `https://api.github.com/search/repositories?q=${searchValue}+topic:template&sort=stars`;
+			const url = `https://api.github.com/search/repositories?q=${searchValue}+topic:${topicValue}&sort=stars`;
 			const response = (await fetch(url));
 			const data = await response.json();
 			result = data.items;
@@ -37,6 +42,20 @@
 		<div class="col-lg-6 col-md-12">
 			<div class="m-3">
 				<h1>Pemplates</h1>
+
+				<div class="form-check form-check-inline m-3">
+					<input class="form-check-input" id="ir1" type="radio" name="topic" value="template" bind:group={topicValue} checked on:click={search}>
+					<label class="form-check-label" for="ir1">Templates</label>
+				</div>
+				<div class="form-check form-check-inline m-3">
+					<input class="form-check-input" id="ir2" type="radio" name="topic" value="boilerplate" bind:group={topicValue} on:click={search}>
+					<label class="form-check-label" for="ir2">Boilerplate</label>
+				</div>
+				<div class="form-check form-check-inline m-3">
+					<input class="form-check-input" id="ir3" type="radio" name="topic" value="starter-kit" bind:group={topicValue} on:click={search}>
+					<label class="form-check-label" for="ir3">Starter-kit</label>
+				</div>
+
 				<input class="form-control" type="text" bind:value={searchValue} on:keyup={onKeyUp} placeholder="Keywords" />
 			</div>
 
