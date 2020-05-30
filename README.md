@@ -25,6 +25,17 @@ and it offers some extra features like templates and projects management.
 - You can click on repo's name to open it on github
 - It's better to use degit as it is faster and automatically removes git config
 
+### I can't find what I need
+
+That's cool. It means you can create it on your own and share it with the community. It's easy, just publish your project
+on Github and add one (or all) of the following topics:
+- template
+- boilerplate
+- starter-kit
+
+It's even easier if you are using a <a href="https://github.com/OleksandrDemian/pemplates">desktop app</a> app.
+It allows you to manage your local templates and share them on Github by only pressing one button.
+
 # Dev
 Thi sproject is made with Svelte 3 (it still has it's icon).
 
