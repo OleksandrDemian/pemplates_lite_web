@@ -38,10 +38,14 @@
 </script>
 
 <div class="container-fluid">
-	<div class="row justify-content-center">
+	<div id="app" class="row justify-content-center">
 		<div class="col-lg-6 col-md-12">
 			<div class="m-3">
-				<h1>Pemplates</h1>
+				<h1>
+					<a id="headLink" href="https://github.com/OleksandrDemian/pemplates_lite_web" target="_blank">
+						Pemplates
+					</a>
+				</h1>
 
 				<div class="form-check form-check-inline m-3">
 					<input class="form-check-input" id="ir1" type="radio" name="topic" value="template" bind:group={topicValue} checked on:click={search}>
@@ -82,4 +86,25 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="footer" class="row justify-content-center">
+		<div id="footer-container" class="col-lg-6 col-md-12">
+			Made by <a target="_blank" href="https://twitter.com/9zemian5">Oleksandr Demian</a>
+		</div>
+	</div>
 </div>
+
+<style>
+	#app {
+		min-height: 90vh;
+	}
+
+	#footer {
+		height: 10vh;
+		align-items: center;
+	}
+
+	#footer-container {
+		text-align: center;
+	}
+</style>
