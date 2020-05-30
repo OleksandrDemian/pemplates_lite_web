@@ -1,6 +1,8 @@
 # Pemplates Lite
 
-This project allows you to search for project templates on github.
+Avoid boilerplate code during project setup.
+
+This project allows you to search for project templates on github and easily setup them for development.
 
 Currently it is hosted on <a href="https://thirsty-leakey-8f0295.netlify.app/">netlify</a>
 
