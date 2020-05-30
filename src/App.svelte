@@ -48,19 +48,24 @@
 				</h1>
 
 				<div class="form-check form-check-inline m-3">
-					<input class="form-check-input" id="ir1" type="radio" name="topic" value="template" bind:group={topicValue} checked on:click={search}>
+					<input class="form-check-input" id="ir1" type="radio" name="topic" value="template" bind:group={topicValue} checked>
 					<label class="form-check-label" for="ir1">Templates</label>
 				</div>
 				<div class="form-check form-check-inline m-3">
-					<input class="form-check-input" id="ir2" type="radio" name="topic" value="boilerplate" bind:group={topicValue} on:click={search}>
+					<input class="form-check-input" id="ir2" type="radio" name="topic" value="boilerplate" bind:group={topicValue}>
 					<label class="form-check-label" for="ir2">Boilerplate</label>
 				</div>
 				<div class="form-check form-check-inline m-3">
-					<input class="form-check-input" id="ir3" type="radio" name="topic" value="starter-kit" bind:group={topicValue} on:click={search}>
+					<input class="form-check-input" id="ir3" type="radio" name="topic" value="starter-kit" bind:group={topicValue}>
 					<label class="form-check-label" for="ir3">Starter-kit</label>
 				</div>
 
-				<input class="form-control" type="text" bind:value={searchValue} on:keyup={onKeyUp} placeholder="Keywords" />
+				<div class="input-group mb-3">
+					<input class="form-control border-primary" type="text" bind:value={searchValue} on:keyup={onKeyUp} placeholder="Keywords" />
+					<div class="input-group-append">
+						<button class="btn btn-outline-primary" on:click={search}>Search</button>
+					</div>
+				</div>
 			</div>
 
 			<div>
