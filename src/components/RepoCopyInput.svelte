@@ -19,12 +19,12 @@
 	}
 </script>
 
-<div class="input-group mb-3">
+<div class="input-group mb-3" on:click={onCopy}>
 	<div class="input-group-prepend">
 		<span class="input-group-text border-primary bg-primary text-white">{type}:</span>
 	</div>
-	<input class="form-control border-primary " disabled bind:this={element} value={value} on:click={onCopy}>
+	<input class="form-control border-primary " disabled bind:this={element} value={value}>
 	<div class="input-group-append">
-		<button class="btn btn-outline-primary" on:click={onCopy}>Copy {type} command</button>
+		<button class="btn btn-outline-primary">Copy</button>
 	</div>
 </div>
