@@ -1,25 +1,14 @@
 import App from './App.svelte';
-import {createStyle} from "power-notifier";
+import "./notifications";
 
-createStyle("default", {
-	header: {
-		backgroundColor: "var(--blue)",
-		color: "white",
-		textAlign: "center"
-	},
-	content: {
-		backgroundColor: "white",
-		color: "var(--blue)",
-		border: "1px solid #6495ED"
-	},
-	button: {
-		backgroundColor: "var(--blue)",
-		color: "white"
-	}
-});
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
 
 const app = new App({
-	target: document.body
+	target: document.body,
+	props: {
+		searchValue: urlParams.get("query")
+	}
 });
 
 export default app;

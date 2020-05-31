@@ -1,8 +1,9 @@
 <script>
 	import Loading from "./components/Loading.svelte";
 	import SearchResult from "./SearchResult.svelte";
+	import {onMount} from "svelte";
 
-	let searchValue = "";
+	export let searchValue = "";
 	let filterValue = "";
 	let topicValue = "template";
 	let isSearching = false;
@@ -24,18 +25,19 @@
 		isSearching = true;
 		filterValue = searchValue;
 		try {
-			// const url = `https://api.github.com/search/repositories?q=${search_value}+topic:template&sort=stars`;
 			const url = `https://api.github.com/search/repositories?q=${searchValue}+topic:${topicValue}&sort=stars`;
 			const response = (await fetch(url));
 			const data = await response.json();
 			result = data.items;
-			console.log(result);
+			console.log(data);
 		} catch (e) {
 			console.error(e);
 		}
 
 		isSearching = false;
-	}
+	};
+
+	onMount(search);
 </script>
 
 <div class="container-fluid">
