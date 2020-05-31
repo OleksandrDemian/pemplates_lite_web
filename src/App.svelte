@@ -17,7 +17,7 @@
 
 	const search = async () => {
 		//todo: topic:boilerplate+topic:starter-kit
-		if(searchValue.length < 1){
+		if(searchValue == null || searchValue.length < 1){
 			result = null;
 			return;
 		}
