@@ -46,7 +46,7 @@
 			<div class="m-3">
 				<h1>
 					<a id="headLink" href="https://github.com/OleksandrDemian/pemplates_lite_web#how-it-works" target="_blank">
-						Pemplates
+						<img id="spicysalmon" src="/spicysalmon_512_t.png" width="64" />Pemplates
 					</a>
 				</h1>
 
@@ -113,5 +113,10 @@
 
 	#footer-container {
 		text-align: center;
+	}
+
+	#spicysalmon {
+		margin-left: auto;
+		margin-right: auto;
 	}
 </style>
