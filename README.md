@@ -4,14 +4,12 @@ Avoid boilerplate code during project setup.
 
 This project allows you to search for project templates on github and easily setup them for development.
 
-Currently it is hosted on <a href="https://thirsty-leakey-8f0295.netlify.app/">netlify</a>
-
 Check also <a href="https://github.com/OleksandrDemian/pemplates">desktop app</a>, it is easier to use
 and it offers some extra features like templates and projects management.
 
 ### How it works
 
-- Go to <a href="https://thirsty-leakey-8f0295.netlify.app/">website</a>
+- Go to <a href="https://spicysalmon.tech/">website</a>
 - Choose what you want to search (templates, biolerplate, starter-kit)
 - Enter keywords (ex: react electron)
 - Press enter
