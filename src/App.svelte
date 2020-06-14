@@ -45,7 +45,7 @@
 		<div class="col-lg-6 col-md-12">
 			<div class="m-3">
 				<h1>
-					<a id="headLink" href="https://github.com/OleksandrDemian/pemplates_lite_web" target="_blank">
+					<a id="headLink" href="https://github.com/OleksandrDemian/pemplates_lite_web#how-it-works" target="_blank">
 						Pemplates
 					</a>
 				</h1>
