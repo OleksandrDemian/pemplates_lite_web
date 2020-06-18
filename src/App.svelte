@@ -45,7 +45,7 @@
 
 	<div id="footer" class="row justify-content-center">
 		<div id="footer-container" class="col-lg-6 col-md-12">
-			<p>Made by <a target="_blank" href="https://twitter.com/9zemian5"><h4>Oleksandr Demian</h4></a></p>
+			<span>Made by <a target="_blank" href="https://twitter.com/9zemian5"><h4>Oleksandr Demian</h4></a></span>
 		</div>
 	</div>
 </div>
