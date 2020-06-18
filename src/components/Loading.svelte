@@ -22,10 +22,4 @@
 	onDestroy(() => clearInterval(intervalId));
 </script>
 
-<h3>{message} {indicator}</h3>
-
-<style>
-	h3 {
-		color: var(--blue);
-	}
-</style>
+<h4>{message} {indicator}</h4>

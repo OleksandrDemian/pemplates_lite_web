@@ -24,10 +24,10 @@
 
 <div class="input-group mb-3" on:click={onCopy}>
 	<div class="input-group-prepend">
-		<span class="input-group-text border-primary bg-primary text-white">{type}:</span>
+		<span class="input-group-text p-border-1">{type}:</span>
 	</div>
-	<input class="form-control border-primary" disabled bind:this={element} value={value}>
+	<input class="form-control" disabled bind:this={element} value={value}>
 	<div class="input-group-append">
-		<button class="btn btn-outline-primary">Copy</button>
+		<button class="btn">Copy</button>
 	</div>
 </div>

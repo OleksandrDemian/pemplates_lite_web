@@ -2,21 +2,20 @@ import {createStyle} from "power-notifier";
 
 createStyle("default", {
 	header: {
-		backgroundColor: "var(--blue)",
+		backgroundColor: "black",
 		color: "white",
 		textAlign: "center"
 	},
 	content: {
 		backgroundColor: "white",
-		color: "var(--blue)",
-		borderRadius: "5px"
+		color: "black",
+		fontWeight: "600"
 	},
 	container: {
-		border: "1px solid var(--blue)",
-		borderRadius: "5px"
+		border: "2px solid black"
 	},
 	button: {
-		backgroundColor: "var(--blue)",
+		backgroundColor: "black",
 		color: "white"
 	}
 });

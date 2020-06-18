@@ -1,0 +1,51 @@
+h4 {
+    color: black;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration-color: black;
+}
+
+.p-border {
+    border: 2px solid black !important;
+}
+
+.p-border-1 {
+    border: 1px solid black !important;
+}
+
+.form-control:focus {
+    box-shadow: -4px 4px black;
+    transform: translateX(4px) translateY(-4px);
+}
+
+.form-control:disabled {
+    border: 1px solid black;
+}
+
+.btn {
+    border: 1px solid black;
+}
+
+.btn:focus {
+    box-shadow: -4px 4px black;
+    border: 2px solid black;
+    transform: translateX(4px) translateY(-4px);
+}
+
+.card {
+    border: 2px solid black;
+}
+
+.card:hover {
+    position: relative;
+    bottom: 5px;
+    left: 5px;
+    box-shadow: -5px 5px black;
+}
+
+::selection {
+    background-color: black;
+    color: white;
+}
