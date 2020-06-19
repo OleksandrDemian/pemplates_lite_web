@@ -3,6 +3,7 @@
 
 	let commands = config.get("commands");
 	let themeName = config.get("theme");
+	let enableOpenIde = config.get("enableOpenIde");
 
 	const changeCommands = () => {
 		config.set("commands", commands);
@@ -12,6 +13,10 @@
 		document.body.setAttribute("theme", themeName);
 		config.set("theme", themeName);
 	};
+
+	const changeOpenIde = () => {
+		config.set("enableOpenIde", enableOpenIde);
+	}
 </script>
 
 <div class="col-lg-5 col-md-12">
@@ -45,4 +50,17 @@
 			</div>
 		</div>
 	</div>
+
+	<!--	open-ide -->
+<!--	<div class="m-3">-->
+<!--		<div class="form-group">-->
+<!--			<label for="searchIn"><b>Open IDE:</b></label>-->
+<!--			<div class="form-check">-->
+<!--				<input class="form-check-input" type="checkbox" bind:checked={enableOpenIde} id="openIde" on:change={changeOpenIde}>-->
+<!--				<label class="form-check-label" for="openIde">-->
+<!--					Enable open-ide-->
+<!--				</label>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
 </div>

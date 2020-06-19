@@ -2,24 +2,34 @@
 	import RepoCopyInput from "./RepoCopyInput.svelte";
 	import config from "../store/config";
 	import favorites from "../store/favorites";
-	import {createEventDispatcher, onMount} from "svelte";
+	import {createEventDispatcher} from "svelte";
 
 	export let githubRepo;
-	export let mode;
 
 	const dispatcher = createEventDispatcher();
-	let commandsToShow = config.get("commands");
-	let isFavorite = false;
+	const enableOpenIde = config.get("enableOpenIde");
 
-	const getGitValue = val => "git clone " + val;
-	const getDegitValue = val => "npx degit " + val;
+	let commandsToShow = config.get("commands");
+	let isFavorite = favorites.has(githubRepo.html_url);
+
+	const getCommand = (command, url) => {
+		let val = command + " " + url;
+		if(enableOpenIde) {
+			val += " && open-ide";
+		}
+
+		return val;
+	};
+
+	const getGitValue = val => getCommand("git clone",  val);
+	const getDegitValue = val => getCommand("npx degit",  val);
 
 	const showCommand = (com) => {
 		return commandsToShow.includes(com);
 	};
 
 	const addToFavorites = () => {
-		const obj = {
+		favorites.push({
 			owner: {
 				login: githubRepo.owner.login
 			},
@@ -30,44 +40,17 @@
 			stargazers_count: githubRepo.stargazers_count,
 			forks_count: githubRepo.forks_count,
 			open_issues_count: githubRepo.open_issues_count
-		};
+		});
 
-		const arr = favorites.get("favorites");
-		arr.push(obj);
-		favorites.set("favorites", arr);
 		isFavorite = true;
 		dispatcher("addFavorite");
 	};
 
 	const removeFromFavorite = () => {
-		const arr = favorites.get("favorites");
-		for(let i = 0; i < arr.length; i++){
-			if(arr[i].html_url === githubRepo.html_url){
-				arr.splice(i, 1);
-				favorites.set("favorites", arr);
-				dispatcher("removeFavorite");
-				isFavorite = false;
-				return true;
-			}
-		}
-
-		return false;
+		favorites.remove(githubRepo.html_url);
+		isFavorite = false;
+		dispatcher("removeFavorite");
 	};
-
-	const checkIsFavorite = () => {
-		const arr = favorites.get("favorites");
-		for(let i = 0; i < arr.length; i++){
-			if(arr[i].html_url === githubRepo.html_url){
-				return true;
-			}
-		}
-
-		return false;
-	};
-
-	onMount(() => {
-		isFavorite = checkIsFavorite();
-	});
 </script>
 
 <div class="card m-3">
@@ -95,10 +78,10 @@
 			<RepoCopyInput type="degit" value={getDegitValue(githubRepo.html_url)}/>
 		{/if}
 
-		{#if mode === 1}
-			<button class="btn" disabled={isFavorite} on:click={addToFavorites}>Add to favorites</button>
-		{:else if mode === 2}
+		{#if isFavorite}
 			<button class="btn" on:click={removeFromFavorite}>Remove from favorites</button>
+		{:else}
+			<button class="btn" on:click={addToFavorites}>Add to favorites</button>
 		{/if}
 	</div>
 </div>

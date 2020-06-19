@@ -72,7 +72,7 @@
 			{ #if result != null }
 				{ #if result.length > 0 }
 					{#each result as searchResult (searchResult.full_name)}
-						<SearchResult githubRepo={searchResult} mode={1} />
+						<SearchResult githubRepo={searchResult} />
 					{/each}
 				{:else}
 					<h3>There are no project templates for <b>"{filterValue}"</b></h3>
