@@ -20,8 +20,8 @@
 		<div class="form-group">
 			<label for="searchIn"><b>Theme:</b></label>
 			<select class="form-control p-border" id="searchIn" bind:value={themeName} on:change={changeTheme}>
-				<option value="">Dark-white</option>
-				<option value="yellow-blue">Yellow-blue</option>
+				<option value="">Classic</option>
+				<option value="yellow-blue">Easy</option>
 				<option value="red-black">Red-black</option>
 			</select>
 		</div>
