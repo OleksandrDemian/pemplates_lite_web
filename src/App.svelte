@@ -2,6 +2,7 @@
 	import Search from "./sections/Search.svelte";
 	import Configurations from "./sections/Configurations.svelte";
 	import About from "./sections/About.svelte";
+	import Favorites from "./sections/Favorites.svelte";
 
 	export let searchValue;
 
@@ -18,6 +19,9 @@
 			case "#about":
 				route = "about";
 				break;
+			case "#favorites":
+				route = "favorites";
+				break;
 		}
 	});
 </script>
@@ -31,6 +35,7 @@
 <!--				<a href="#about"><h4>About</h4></a>-->
 				<a href="https://github.com/OleksandrDemian/pemplates_lite_web#how-it-works" target="_blank"><h4>How it works</h4></a>
 				<a href="#config"><h4>Configurations</h4></a>
+				<a href="#favorites"><h4>Favorites</h4></a>
 			</div>
 		</div>
 
@@ -38,6 +43,8 @@
 			<Search searchValue={searchValue} />
 		{:else if route === "config"}
 			<Configurations />
+		{:else if route === "favorites"}
+			<Favorites />
 		{:else if route === "about"}
 			<About />
 		{/if}

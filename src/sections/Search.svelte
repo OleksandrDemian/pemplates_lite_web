@@ -1,6 +1,6 @@
 <script>
 	import Loading from "../components/Loading.svelte";
-	import SearchResult from "../SearchResult.svelte";
+	import SearchResult from "../components/SearchResult.svelte";
 	import {onMount} from "svelte";
 
 	export let searchValue = "";
@@ -72,7 +72,7 @@
 			{ #if result != null }
 				{ #if result.length > 0 }
 					{#each result as searchResult (searchResult.full_name)}
-						<SearchResult githubRepo={searchResult} />
+						<SearchResult githubRepo={searchResult} mode={1} />
 					{/each}
 				{:else}
 					<h3>There are no project templates for <b>"{filterValue}"</b></h3>

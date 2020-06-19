@@ -1,5 +1,5 @@
 <script>
-	import config from "../utils/config";
+	import config from "../store/config";
 
 	let commands = config.get("commands");
 	let themeName = config.get("theme");

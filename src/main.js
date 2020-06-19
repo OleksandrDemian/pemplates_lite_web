@@ -4,7 +4,7 @@ import "./notifications";
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
-import config from "./utils/config";
+import config from "./store/config";
 
 let themeName = config.get("theme");
 document.body.setAttribute("theme", themeName);
