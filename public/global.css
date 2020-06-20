@@ -1,4 +1,5 @@
 :root [theme='yellow-blue'] {
+    --bg-card: white;
     --bg-color: #fff0c3;
     --main-color: #3d4662;
     --main-text-color: #3d4662;
@@ -6,13 +7,31 @@
 }
 
 :root [theme='red-black'] {
+    --bg-card: white;
     --bg-color: #ff6b50;
     --main-color: black;
     --main-text-color: black;
     --second-color: white;
 }
 
+:root [theme='easy-green'] {
+    --bg-card: white;
+    --bg-color: #c8ff9e;
+    --main-color: #4c537c;
+    --main-text-color: #4c537c;
+    --second-color: white;
+}
+
+:root [theme='easy-red'] {
+    --bg-card: white;
+    --bg-color: #ff6b50;
+    --main-color: #3d4662;
+    --main-text-color: #3d4662;
+    --second-color: white;
+}
+
 :root {
+    --bg-card: white;
     --bg-color: white;
     --main-color: black;
     --main-text-color: black;
@@ -23,13 +42,14 @@ body {
     background-color: var(--bg-color);
 }
 
-h4, label, li, p {
+h4, label, li, p, .btn {
     color: var(--main-text-color);
     font-weight: 600;
 }
 
 a {
     text-decoration-color: var(--main-text-color);
+    font-weight: 800;
     color: var(--main-color);
 }
 
@@ -66,6 +86,7 @@ a:hover {
 
 .card {
     border: 2px solid var(--main-color);
+    background-color: var(--bg-card);
 }
 
 .card.rise, .card.hover:hover {

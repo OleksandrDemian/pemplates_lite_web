@@ -27,7 +27,9 @@
 			<label for="searchIn"><b>Theme:</b></label>
 			<select class="form-control p-border" id="searchIn" bind:value={themeName} on:change={changeTheme}>
 				<option value="">Classic</option>
-				<option value="yellow-blue">Easy</option>
+				<option value="yellow-blue">Easy-yellow</option>
+				<option value="easy-green">Easy-green</option>
+				<option value="easy-red">Easy-red</option>
 				<option value="red-black">Red-black</option>
 			</select>
 		</div>
@@ -49,19 +51,23 @@
 					Degit
 				</label>
 			</div>
+
+			<p>In order to use <a href="https://git-scm.com/" target="_blank">git</a> or <a href="https://www.npmjs.com/package/degit" target="_blank">degit</a>, be sure they are installed on your machine (degit requires npm v6 or newer)</p>
 		</div>
 	</Card>
 
 	<!--	open-ide -->
-<!--	<div class="m-3">-->
-<!--		<div class="form-group">-->
-<!--			<label for="searchIn"><b>Open IDE:</b></label>-->
-<!--			<div class="form-check">-->
-<!--				<input class="form-check-input" type="checkbox" bind:checked={enableOpenIde} id="openIde" on:change={changeOpenIde}>-->
-<!--				<label class="form-check-label" for="openIde">-->
-<!--					Enable open-ide-->
-<!--				</label>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</div>-->
+	<Card>
+		<div class="form-group">
+			<label for="searchIn"><b>Open IDE:</b></label>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" bind:checked={enableOpenIde} id="openIde" on:change={changeOpenIde}>
+				<label class="form-check-label" for="openIde">
+					Enable open-ide
+				</label>
+			</div>
+			<p>Open IDE is a CLI tool distributed via NPM. It allows you to open a folder inside of your favorite edito right from the command line.</p>
+			<p>Use this option only if <a href="https://www.npmjs.com/package/open-ide" target="_blank">open-ide</a> is installed on your machine</p>
+		</div>
+	</Card>
 </div>

@@ -15,6 +15,6 @@
 			<SearchResult githubRepo={favorite} on:removeFavorite={onRemove} />
 		{/each}
 	{:else}
-		<h4>There are no favorites</h4>
+		<h4 class="m-3">There are no favorites</h4>
 	{ /if }
 </div>
