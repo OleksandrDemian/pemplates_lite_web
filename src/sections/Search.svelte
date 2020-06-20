@@ -2,6 +2,7 @@
 	import Loading from "../components/Loading.svelte";
 	import SearchResult from "../components/SearchResult.svelte";
 	import {onMount} from "svelte";
+	import Card from "../components/Card.svelte";
 
 	export let searchValue = "";
 	let filterValue = "";
@@ -18,7 +19,7 @@
 	const search = async () => {
 		//todo: topic:boilerplate+topic:starter-kit
 		document.activeElement.blur();
-		if(searchValue == null || searchValue.length < 1){
+		if (searchValue == null || searchValue.length < 1) {
 			result = null;
 			return;
 		}
@@ -42,7 +43,7 @@
 </script>
 
 <div id="searchContainer" class="col-lg-5 col-md-12">
-	<div class="m-3">
+	<Card>
 		<div class="form-group">
 			<label for="searchIn"><b>Search in:</b></label>
 			<select class="form-control p-border" id="searchIn" bind:value={topicValue} on:change={search}>
@@ -61,7 +62,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</Card>
 
 	<div>
 		{#if isSearching}

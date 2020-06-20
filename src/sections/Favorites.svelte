@@ -9,7 +9,7 @@
 	};
 </script>
 
-<div class="col-lg-5 col-md-12 p-3">
+<div class="col-lg-5 col-md-12">
 	{ #if fav.length > 0 }
 		{#each fav as favorite}
 			<SearchResult githubRepo={favorite} on:removeFavorite={onRemove} />

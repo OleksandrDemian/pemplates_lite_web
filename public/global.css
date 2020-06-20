@@ -23,7 +23,7 @@ body {
     background-color: var(--bg-color);
 }
 
-h4 {
+h4, label, li, p {
     color: var(--main-text-color);
     font-weight: 600;
 }
@@ -60,7 +60,7 @@ a:hover {
 
 .btn:focus {
     box-shadow: -4px 4px var(--main-color);
-    border: 2px solid var(--main-color);
+    border: 1px solid var(--main-color);
     transform: translateX(4px) translateY(-4px);
 }
 
@@ -68,7 +68,7 @@ a:hover {
     border: 2px solid var(--main-color);
 }
 
-.card:hover {
+.card.rise, .card.hover:hover {
     position: relative;
     bottom: 5px;
     left: 5px;

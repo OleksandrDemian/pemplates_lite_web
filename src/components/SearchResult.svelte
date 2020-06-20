@@ -3,6 +3,7 @@
 	import config from "../store/config";
 	import favorites from "../store/favorites";
 	import {createEventDispatcher} from "svelte";
+	import Card from "./Card.svelte";
 
 	export let githubRepo;
 
@@ -14,15 +15,15 @@
 
 	const getCommand = (command, url) => {
 		let val = command + " " + url;
-		if(enableOpenIde) {
+		if (enableOpenIde) {
 			val += " && open-ide";
 		}
 
 		return val;
 	};
 
-	const getGitValue = val => getCommand("git clone",  val);
-	const getDegitValue = val => getCommand("npx degit",  val);
+	const getGitValue = val => getCommand("git clone", val);
+	const getDegitValue = val => getCommand("npx degit", val);
 
 	const showCommand = (com) => {
 		return commandsToShow.includes(com);
@@ -53,35 +54,33 @@
 	};
 </script>
 
-<div class="card m-3">
-	<div class="card-body">
-		<a href="{githubRepo.html_url}" target="_blank">
-			<h4>
-                {githubRepo.name}
-				by
-				<span class="secondary-color">{githubRepo.owner.login}</span>
-			</h4>
-		</a>
+<Card hover={true} rise={isFavorite}>
+	<a href="{githubRepo.html_url}" target="_blank">
+		<h4>
+			{githubRepo.name}
+			by
+			<span class="secondary-color">{githubRepo.owner.login}</span>
+		</h4>
+	</a>
 
-		<p>
-			<span class="badge badge-success">{githubRepo.language}</span>
-			<span class="badge badge-info">Stars: {githubRepo.stargazers_count}</span>
-			<span class="badge badge-primary">Forks: {githubRepo.forks_count}</span>
-			<span class="badge badge-warning">Issues: {githubRepo.open_issues_count}</span>
-		</p>
-		<p>{githubRepo.description}</p>
+	<p>
+		<span class="badge badge-success">{githubRepo.language}</span>
+		<span class="badge badge-info">Stars: {githubRepo.stargazers_count}</span>
+		<span class="badge badge-primary">Forks: {githubRepo.forks_count}</span>
+		<span class="badge badge-warning">Issues: {githubRepo.open_issues_count}</span>
+	</p>
+	<p>{githubRepo.description}</p>
 
-		{#if showCommand("git")}
-			<RepoCopyInput type="git" value={getGitValue(githubRepo.html_url)}/>
-		{/if}
-		{#if showCommand("degit")}
-			<RepoCopyInput type="degit" value={getDegitValue(githubRepo.html_url)}/>
-		{/if}
+	{#if showCommand("git")}
+		<RepoCopyInput type="git" value={getGitValue(githubRepo.html_url)}/>
+	{/if}
+	{#if showCommand("degit")}
+		<RepoCopyInput type="degit" value={getDegitValue(githubRepo.html_url)}/>
+	{/if}
 
-		{#if isFavorite}
-			<button class="btn" on:click={removeFromFavorite}>Remove from favorites</button>
-		{:else}
-			<button class="btn" on:click={addToFavorites}>Add to favorites</button>
-		{/if}
-	</div>
-</div>
+	{#if isFavorite}
+		<button class="btn" on:click={removeFromFavorite}>Remove from favorites</button>
+	{:else}
+		<button class="btn" on:click={addToFavorites}>Add to favorites</button>
+	{/if}
+</Card>

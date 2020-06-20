@@ -1,5 +1,6 @@
 <script>
 	import config from "../store/config";
+	import Card from "../components/Card.svelte";
 
 	let commands = config.get("commands");
 	let themeName = config.get("theme");
@@ -21,7 +22,7 @@
 
 <div class="col-lg-5 col-md-12">
 	<!--	themes-->
-	<div class="m-3">
+	<Card>
 		<div class="form-group">
 			<label for="searchIn"><b>Theme:</b></label>
 			<select class="form-control p-border" id="searchIn" bind:value={themeName} on:change={changeTheme}>
@@ -30,10 +31,10 @@
 				<option value="red-black">Red-black</option>
 			</select>
 		</div>
-	</div>
+	</Card>
 
 	<!--	commands-->
-	<div class="m-3">
+	<Card>
 		<div class="form-group">
 			<label for="searchIn"><b>Commands:</b></label>
 			<div class="form-check">
@@ -49,7 +50,7 @@
 				</label>
 			</div>
 		</div>
-	</div>
+	</Card>
 
 	<!--	open-ide -->
 <!--	<div class="m-3">-->
