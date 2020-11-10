@@ -3,17 +3,13 @@
 	import SearchResult from "../components/SearchResult.svelte";
 
 	let fav = favorites.get();
-
-	const onRemove = () => {
-		fav = favorites.get();
-	};
 </script>
 
 <div id="favorites">
 	<h2>Favorites</h2>
 	{ #if fav.length > 0 }
 		{#each fav as favorite}
-			<SearchResult githubRepo={favorite} on:removeFavorite={onRemove} />
+			<SearchResult githubRepo={favorite} />
 		{/each}
 	{:else}
 		<h4 class="m-3">There are no favorites</h4>

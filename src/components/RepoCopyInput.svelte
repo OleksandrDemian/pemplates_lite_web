@@ -14,9 +14,9 @@
 		document.execCommand("copy");
 
 		element.disabled = true;
+
 		notify({
-			title: "Copied to clipboard",
-			message: value,
+			message: "Copied to clipboard",
 			timeout: 2500
 		});
 	}
