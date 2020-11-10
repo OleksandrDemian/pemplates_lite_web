@@ -9,7 +9,7 @@ and it offers some extra features like templates and projects management.
 
 ### How it works
 
-- Go to <a href="https://spicysalmon.tech/">website</a>
+- Go to <a href="https://templates.spicysalmon.tech/">website</a>
 - Choose what you want to search (templates, biolerplate, starter-kit)
 - Enter keywords (ex: react electron)
 - Press enter
