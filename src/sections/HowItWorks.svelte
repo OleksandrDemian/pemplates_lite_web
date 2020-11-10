@@ -1,9 +1,11 @@
 <script>
 	import Card from "../components/Card.svelte";
 </script>
-<div class="col-lg-5 col-md-12">
+<div>
+	<h2>How it works</h2>
+
 	<Card rise="true">
-		<h4>How it works</h4>
+		<h4>How to use templates?</h4>
 		<ul>
 			<li>Choose what you want to search (templates, biolerplate, starter-kit)</li>
 			<li>Enter keywords (ex: react electron)</li>

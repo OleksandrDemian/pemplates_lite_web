@@ -22,12 +22,23 @@
 	}
 </script>
 
-<div class="input-group mb-3" on:click={onCopy}>
-	<div class="input-group-prepend">
-		<span class="input-group-text p-border-1">{type}:</span>
-	</div>
-	<input class="form-control" disabled bind:this={element} value={value}>
-	<div class="input-group-append">
-		<button class="btn">Copy</button>
-	</div>
+<div class="input" on:click={onCopy}>
+	<span class="prepend">{type}:</span>
+	<input aria-label="Value to copy" class="main middle" disabled bind:this={element} value={value}>
+	<button class="main append">Copy</button>
 </div>
+
+<style>
+	div.input {
+		display: grid;
+		grid-template-columns: 50px 1fr 100px;
+		padding: 5px 10px;
+		border-radius: 10px;
+		grid-gap: 10px;
+	}
+
+	span.prepend {
+		display: flex;
+		align-items: center;
+	}
+</style>

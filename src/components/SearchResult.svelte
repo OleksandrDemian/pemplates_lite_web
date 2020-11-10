@@ -1,9 +1,10 @@
 <script>
 	import RepoCopyInput from "./RepoCopyInput.svelte";
-	import config from "../store/config";
-	import favorites from "../store/favorites";
+	import config from "../storage/config";
+	import favorites from "../storage/favorites";
 	import {createEventDispatcher} from "svelte";
 	import Card from "./Card.svelte";
+	import Badge from "./Badge.svelte";
 
 	export let githubRepo;
 
@@ -54,7 +55,7 @@
 	};
 </script>
 
-<Card hover={true} rise={isFavorite}>
+<Card>
 	<a href="{githubRepo.html_url}" target="_blank">
 		<h4>
 			{githubRepo.name}
@@ -63,13 +64,20 @@
 		</h4>
 	</a>
 
-	<p>
-		<span class="badge badge-success">{githubRepo.language}</span>
-		<span class="badge badge-info">Stars: {githubRepo.stargazers_count}</span>
-		<span class="badge badge-primary">Forks: {githubRepo.forks_count}</span>
-		<span class="badge badge-warning">Issues: {githubRepo.open_issues_count}</span>
-	</p>
 	<p>{githubRepo.description}</p>
+
+	<div class="badges-container">
+		{#if isFavorite}
+			<button class="favorite remove-favorite" on:click={removeFromFavorite}><b>Remove from favorites</b></button>
+		{:else}
+			<button class="favorite add-favorite" on:click={addToFavorites}><b>Add to favorites</b></button>
+		{/if}
+
+		<Badge>{githubRepo.language}</Badge>
+		<Badge>Stars: {githubRepo.stargazers_count}</Badge>
+		<Badge>Forks: {githubRepo.forks_count}</Badge>
+		<Badge>Issues: {githubRepo.open_issues_count}</Badge>
+	</div>
 
 	{#if showCommand("git")}
 		<RepoCopyInput type="git" value={getGitValue(githubRepo.html_url)}/>
@@ -77,10 +85,36 @@
 	{#if showCommand("degit")}
 		<RepoCopyInput type="degit" value={getDegitValue(githubRepo.html_url)}/>
 	{/if}
-
-	{#if isFavorite}
-		<button class="btn" on:click={removeFromFavorite}>Remove from favorites</button>
-	{:else}
-		<button class="btn" on:click={addToFavorites}>Add to favorites</button>
-	{/if}
 </Card>
+
+<style>
+	div.badges-container {
+		margin: 5px 0;
+	}
+
+	button.add-favorite {
+		border: 1px solid #3481ff;
+		color: #3481ff;
+	}
+
+	button.add-favorite:hover {
+		border: 1px solid #347bf5;
+		color: #347bf5;
+	}
+
+	button.remove-favorite {
+		border: 1px solid orangered;
+		color: orangered;
+	}
+
+	button.favorite {
+		display: inline-block;
+		padding: 5px 10px;
+		margin: 5px 5px 5px 0;
+		border-radius: 10px;
+		font-size: 12px;
+		background-color: white;
+
+		cursor: pointer;
+	}
+</style>

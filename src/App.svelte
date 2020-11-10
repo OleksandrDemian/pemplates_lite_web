@@ -4,81 +4,52 @@
 	import About from "./sections/About.svelte";
 	import Favorites from "./sections/Favorites.svelte";
 	import HowItWorks from "./sections/HowItWorks.svelte";
+	import Footer from "./sections/Footer.svelte";
+	import Navigation from "./sections/Navigation.svelte";
+	import Route from "./store/route";
 
 	export let searchValue;
-
-	let route = "search";
-
-	window.addEventListener('hashchange', function () {
-		switch (location.hash) {
-			case "#search":
-				route = "search";
-				break;
-			case "#config":
-				route = "config";
-				break;
-			case "#about":
-				route = "about";
-				break;
-			case "#howItWorks":
-				route = "howItWorks";
-				break;
-			case "#favorites":
-				route = "favorites";
-				break;
-		}
-	});
 </script>
 
-<div class="container-fluid">
-	<div id="app" class="row justify-content-center">
-		<div class="col-lg-2">
-			<div class="m-3">
-				<h4><img id="spicysalmon" src="/spicysalmon_512_t.png" width="64" /></h4>
-				<a href="#search"><h4>Pemplates</h4></a>
-				<a href="#about"><h4>About</h4></a>
-				<a href="#howItWorks"><h4>How it works</h4></a>
-				<a href="#config"><h4>Configurations</h4></a>
-				<a href="#favorites"><h4>Favorites</h4></a>
-			</div>
-		</div>
+<main>
+	<Navigation />
 
-		{#if route === "search"}
+	<div id="app">
+		{#if $Route.hash === "search" || $Route.hash === ""}
 			<Search searchValue={searchValue} />
-		{:else if route === "config"}
+		{:else if $Route.hash === "config"}
 			<Configurations />
-		{:else if route === "favorites"}
+		{:else if $Route.hash === "favorites"}
 			<Favorites />
-		{:else if route === "howItWorks"}
+		{:else if $Route.hash === "howItWorks"}
 			<HowItWorks />
-		{:else if route === "about"}
+		{:else if $Route.hash === "about"}
 			<About />
 		{/if}
+
+		<Footer />
 	</div>
 
-	<div id="footer" class="row justify-content-center">
-		<div id="footer-container" class="col-lg-6 col-md-12">
-			<p>Made by <a target="_blank" href="https://twitter.com/9zemian5"><h4>Oleksandr Demian</h4></a></p>
-		</div>
+	<div id="news">
+
 	</div>
-</div>
+</main>
 
 <style>
-	#app {
-		min-height: 90vh;
-	}
-
-	#footer {
-		height: 10vh;
-		align-items: center;
-	}
-
-	#footer-container {
-		text-align: center;
-	}
-
-	#spicysalmon {
+	main {
+		max-width: 1000px;
+		display: grid;
+		grid-template-columns: 1fr 3fr 1fr;
+		grid-gap: 25px;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	/*APP*/
+	div#app {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		justify-content: space-between;
 	}
 </style>

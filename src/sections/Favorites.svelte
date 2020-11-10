@@ -1,5 +1,5 @@
 <script>
-	import favorites from "../store/favorites";
+	import favorites from "../storage/favorites";
 	import SearchResult from "../components/SearchResult.svelte";
 
 	let fav = favorites.get();
@@ -9,7 +9,8 @@
 	};
 </script>
 
-<div class="col-lg-5 col-md-12">
+<div id="favorites">
+	<h2>Favorites</h2>
 	{ #if fav.length > 0 }
 		{#each fav as favorite}
 			<SearchResult githubRepo={favorite} on:removeFavorite={onRemove} />
@@ -18,3 +19,9 @@
 		<h4 class="m-3">There are no favorites</h4>
 	{ /if }
 </div>
+
+<style>
+	div#favorites {
+
+	}
+</style>

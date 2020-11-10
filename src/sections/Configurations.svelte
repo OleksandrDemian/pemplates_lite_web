@@ -1,5 +1,5 @@
 <script>
-	import config from "../store/config";
+	import config from "../storage/config";
 	import Card from "../components/Card.svelte";
 
 	let commands = config.get("commands");
@@ -20,20 +20,21 @@
 	}
 </script>
 
-<div class="col-lg-5 col-md-12">
+<div id="configurations">
+	<h2>Configurations</h2>
 	<!--	themes-->
-	<Card>
-		<div class="form-group">
-			<label for="searchIn"><b>Theme:</b></label>
-			<select class="form-control p-border" id="searchIn" bind:value={themeName} on:change={changeTheme}>
-				<option value="">Classic</option>
-				<option value="yellow-blue">Easy-yellow</option>
-				<option value="easy-green">Easy-green</option>
-				<option value="easy-red">Easy-red</option>
-				<option value="red-black">Red-black</option>
-			</select>
-		</div>
-	</Card>
+<!--	<Card>-->
+<!--		<div class="form-group">-->
+<!--			<label for="searchIn"><b>Theme:</b></label>-->
+<!--			<select class="main" id="searchIn" bind:value={themeName} on:change={changeTheme}>-->
+<!--				<option value="">Classic</option>-->
+<!--				<option value="yellow-blue">Easy-yellow</option>-->
+<!--				<option value="easy-green">Easy-green</option>-->
+<!--				<option value="easy-red">Easy-red</option>-->
+<!--				<option value="red-black">Red-black</option>-->
+<!--			</select>-->
+<!--		</div>-->
+<!--	</Card>-->
 
 	<!--	commands-->
 	<Card>
@@ -71,3 +72,9 @@
 		</div>
 	</Card>
 </div>
+
+<style>
+	div#configurations {
+
+	}
+</style>

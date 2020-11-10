@@ -1,102 +1,54 @@
-:root [theme='yellow-blue'] {
-    --bg-card: white;
-    --bg-color: #fff0c3;
-    --main-color: #3d4662;
-    --main-text-color: #3d4662;
-    --second-color: white;
-}
-
-:root [theme='red-black'] {
-    --bg-card: white;
-    --bg-color: #ff6b50;
-    --main-color: black;
-    --main-text-color: black;
-    --second-color: white;
-}
-
-:root [theme='easy-green'] {
-    --bg-card: white;
-    --bg-color: #c8ff9e;
-    --main-color: #4c537c;
-    --main-text-color: #4c537c;
-    --second-color: white;
-}
-
-:root [theme='easy-red'] {
-    --bg-card: white;
-    --bg-color: #ff6b50;
-    --main-color: #3d4662;
-    --main-text-color: #3d4662;
-    --second-color: white;
-}
-
-:root {
-    --bg-card: white;
-    --bg-color: white;
-    --main-color: black;
-    --main-text-color: black;
-    --second-color: white;
+@font-face {
+    font-family: 'templates';
+    src: url('./fonts/LexendDeca-Regular.ttf');
+    font-display: swap;
 }
 
 body {
-    background-color: var(--bg-color);
+    font-family: templates;
+    padding: 0;
+    margin: 0;
 }
 
-h4, label, li, p, .btn {
-    color: var(--main-text-color);
-    font-weight: 600;
+* {
+    box-sizing: border-box;
 }
 
-a {
-    text-decoration-color: var(--main-text-color);
-    font-weight: 800;
-    color: var(--main-color);
+button.main {
+    border-radius: 10px;
+    background-color: #3481ff;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+
+    font-size: 16px;
 }
 
-a:hover {
-    text-decoration-color: var(--main-color);
+button.main:hover {
+    background-color: #347bf5;
 }
 
-.p-border {
-    border: 2px solid var(--main-color) !important;
+select.main {
+    cursor: pointer;
 }
 
-.p-border-1 {
-    border: 1px solid var(--main-color) !important;
+input.main:not([type="checkbox"]), select.main {
+    width: 100%;
+    padding: 6px 15px;
+
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+    font-size: 16px;
+    height: 40px;
 }
 
-.form-control:focus {
-    box-shadow: -4px 4px var(--main-color);
-    transform: translateX(4px) translateY(-4px);
+input.main:active, select.main:active {
+    outline: black;
 }
 
-.form-control:disabled {
-    border: 1px solid var(--main-color);
-}
-
-.btn {
-    border: 1px solid var(--main-color);
-}
-
-.btn:focus {
-    box-shadow: -4px 4px var(--main-color);
-    border: 1px solid var(--main-color);
-    transform: translateX(4px) translateY(-4px);
-}
-
-.card {
-    border: 2px solid var(--main-color);
-    background-color: var(--bg-card);
-}
-
-.card.rise, .card.hover:hover {
-    position: relative;
-    bottom: 5px;
-    left: 5px;
-    box-shadow: -5px 5px var(--main-color);
-}
-
-::selection {
-    background-color: var(--main-color);
-    color: var(--second-color);
+label.input-label {
+    display: block;
+    margin-bottom: 5px;
 }

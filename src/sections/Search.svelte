@@ -3,18 +3,13 @@
 	import SearchResult from "../components/SearchResult.svelte";
 	import {onMount} from "svelte";
 	import Card from "../components/Card.svelte";
+	import SearchInput from "../components/SearchInput.svelte";
 
 	export let searchValue = "";
 	let filterValue = "";
 	let topicValue = "template";
 	let isSearching = false;
 	let result = null;
-
-	const onKeyUp = (e) => {
-		if (e.keyCode === 13) {
-			search();
-		}
-	};
 
 	const search = async () => {
 		//todo: topic:boilerplate+topic:starter-kit
@@ -39,30 +34,42 @@
 		isSearching = false;
 	};
 
+	const onSearchTrigger = (e) => {
+		searchValue = e.detail.input;
+		search();
+	};
+
+	// const mock = {
+	// 	html_url: "asfasfasfasfasf",
+	// 	name: "Ciane ciao",
+	// 	language: "Javascript",
+	// 	owner: {
+	// 		login: "USename?"
+	// 	},
+	// 	description: "Lorem ipsum, description sinsommasdkfs asf",
+	// 	stargazers_count: 45,
+	// 	forks_count: 5,
+	// 	open_issues_count: 6
+	// };
+
 	onMount(search);
 </script>
 
 <div id="searchContainer" class="col-lg-5 col-md-12">
-	<Card>
-		<div class="form-group">
-			<label for="searchIn"><b>Search in:</b></label>
-			<select class="form-control p-border" id="searchIn" bind:value={topicValue} on:change={search}>
-				<option value="template">Templates</option>
-				<option value="boilerplate">Boilerplate</option>
-				<option value="starter-kit">Starter-kit</option>
-			</select>
-		</div>
+	<h2>Search</h2>
 
-		<div class="form-group">
-			<label for="searchFor"><b>Search for:</b></label>
-			<div class="input-group mb-3">
-				<input id="searchFor" class="form-control p-border" type="text" bind:value={searchValue} on:keyup={onKeyUp} placeholder="Keywords" />
-				<div class="input-group-append">
-					<button class="btn" on:click={search}><b>Search</b></button>
-				</div>
-			</div>
-		</div>
-	</Card>
+	<div class="input-container">
+		<label class="input-label" for="searchIn"><b>Search in:</b></label>
+		<select class="main" id="searchIn" bind:value={topicValue} on:change={search}>
+			<option value="template">Templates</option>
+			<option value="boilerplate">Boilerplate</option>
+			<option value="starter-kit">Starter-kit</option>
+		</select>
+	</div>
+
+	<div class="input-container">
+		<SearchInput on:search={onSearchTrigger} />
+	</div>
 
 	<div>
 		{#if isSearching}
@@ -86,3 +93,9 @@
 		{/if}
 	</div>
 </div>
+
+<style>
+	div.input-container {
+		margin: 25px 0;
+	}
+</style>
