@@ -1,4 +1,4 @@
-# Pemplates Lite
+# Templates Lite
 
 Avoid boilerplate code during project setup.
 

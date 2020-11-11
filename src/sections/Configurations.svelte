@@ -67,7 +67,8 @@
 					Enable open-ide
 				</label>
 			</div>
-			<p>Open IDE is a CLI tool distributed via NPM. It allows you to open a folder inside of your favorite edito right from the command line.</p>
+			<p>Open IDE is a CLI tool distributed via NPM. It allows you to open a folder inside of your favorite editor right from the command line.</p>
+			<p>By <b>enabling</b> this flag the <b>open ide</b> command will be appended to the clone command and will be executed right after the project is checked out</p>
 			<p>Use this option only if <a href="https://www.npmjs.com/package/open-ide" target="_blank">open-ide</a> is installed on your machine</p>
 		</div>
 	</Card>

@@ -29,27 +29,38 @@
 
 		<Footer />
 	</div>
-
-	<div id="news">
-
-	</div>
 </main>
 
 <style>
+	/* mobile and desktop */
 	main {
 		max-width: 1000px;
 		display: grid;
-		grid-template-columns: 1fr 3fr 1fr;
+		grid-template-columns: 1fr;
 		grid-gap: 25px;
 		margin-left: auto;
 		margin-right: auto;
+
+		padding: 15px 45px;
+		margin-top: 60px;
 	}
 
 	/*APP*/
 	div#app {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
+		/* ignore nav bar */
+		min-height: calc(100vh - 90px);
 		justify-content: space-between;
+	}
+
+	/* desktop */
+	@media screen and (min-width: 771px) {
+		main {
+			grid-template-columns: 1fr 3fr 1fr;
+			padding: 0;
+			margin-top: 0;
+			min-height: 100vh;
+		}
 	}
 </style>

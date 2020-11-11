@@ -11,6 +11,8 @@
 <style>
 	div.card {
 		padding: 10px;
-		margin: 10px 0;
+		margin: 20px 0;
+
+		border-bottom: 2px solid #EEEEEE;
 	}
 </style>

@@ -5,7 +5,7 @@
 <style>
 	div {
 		display: inline-block;
-		padding: 5px 10px;
+		padding: 5px;
 		margin: 5px;
 		color: gray;
 

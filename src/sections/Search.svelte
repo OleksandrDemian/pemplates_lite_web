@@ -86,7 +86,6 @@
 					<h3>There are no project templates for <b>"{filterValue}"</b></h3>
 					<p>
 						If you are sure there are, please let know to it's owner to mark it as template.
-						Meanwhile, you can import it manually from "New" section.
 					</p>
 				{ /if }
 			{/if}

@@ -4,6 +4,10 @@
     font-display: swap;
 }
 
+:root {
+    --animation-speed: 0.2s;
+}
+
 body {
     font-family: templates;
     padding: 0;
@@ -12,21 +16,6 @@ body {
 
 * {
     box-sizing: border-box;
-}
-
-button.main {
-    border-radius: 10px;
-    background-color: #3481ff;
-    color: white;
-    padding: 8px 16px;
-    cursor: pointer;
-    border: none;
-
-    font-size: 16px;
-}
-
-button.main:hover {
-    background-color: #347bf5;
 }
 
 select.main {
@@ -51,4 +40,17 @@ input.main:active, select.main:active {
 label.input-label {
     display: block;
     margin-bottom: 5px;
+}
+
+.no-margins {
+    margin: 0;
+}
+
+a {
+    color: #3481ff;
+    letter-spacing: 1px;
+}
+
+a:visited {
+    color: coral;
 }

@@ -1,7 +1,7 @@
 {
   "ATTENTION": "this file is not included in index.html",
-  "name": "Pemplates",
-  "short_name": "Pemplates",
+  "name": "Templates",
+  "short_name": "Templates",
   "start_url": ".",
   "display": "standalone",
   "description": "Avoid boilerplate code during project setup"
