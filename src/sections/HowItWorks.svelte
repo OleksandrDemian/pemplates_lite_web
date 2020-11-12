@@ -5,7 +5,7 @@
 	<h2>How it works</h2>
 
 	<Card>
-		<h4 class="no-margins">How to use templates?</h4>
+		<h4 class="no-margins main-color">How to use templates?</h4>
 		<ul>
 			<li>Choose what you want to search (templates, biolerplate, starter-kit)</li>
 			<li>Enter keywords (ex: react electron)</li>
@@ -18,7 +18,7 @@
 	</Card>
 
 	<Card>
-		<h4 class="no-margins">How can I add my own template?</h4>
+		<h4 class="no-margins main-color">How can I add my own template?</h4>
 		<p>Have your own awesome template? Publish it on github, make it public and tag it as "template".</p>
 		<p>Now, everyone can find it using Templates.</p>
 	</Card>

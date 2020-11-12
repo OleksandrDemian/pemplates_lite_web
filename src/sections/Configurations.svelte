@@ -39,7 +39,7 @@
 	<!--	commands-->
 	<Card>
 		<div class="form-group">
-			<label for="searchIn"><b>Commands:</b></label>
+			<label for="searchIn" class="main-color group-name"><b>Commands</b></label>
 			<div class="form-check">
 				<input class="form-check-input" type="checkbox" bind:group={commands} value="git" id="git" on:change={changeCommands}>
 				<label class="form-check-label" for="git">
@@ -53,14 +53,14 @@
 				</label>
 			</div>
 
-			<p>In order to use <a href="https://git-scm.com/" target="_blank">git</a> or <a href="https://www.npmjs.com/package/degit" target="_blank">degit</a>, be sure they are installed on your machine (degit requires npm v6 or newer)</p>
+			<p>In order to use <a href="https://git-scm.com/" target="_blank">git</a> or <a href="https://www.npmjs.com/package/degit" target="_blank">degit</a>, be sure they are installed on your machine (degit requires npm v6 or newer).</p>
 		</div>
 	</Card>
 
 	<!--	open-ide -->
 	<Card>
 		<div class="form-group">
-			<label for="searchIn"><b>Open IDE:</b></label>
+			<label for="searchIn" class="main-color group-name"><b>Open IDE</b></label>
 			<div class="form-check">
 				<input class="form-check-input" type="checkbox" bind:checked={enableOpenIde} id="openIde" on:change={changeOpenIde}>
 				<label class="form-check-label" for="openIde">
@@ -68,14 +68,15 @@
 				</label>
 			</div>
 			<p>Open IDE is a CLI tool distributed via NPM. It allows you to open a folder inside of your favorite editor right from the command line.</p>
-			<p>By <b>enabling</b> this flag the <b>open ide</b> command will be appended to the clone command and will be executed right after the project is checked out</p>
-			<p>Use this option only if <a href="https://www.npmjs.com/package/open-ide" target="_blank">open-ide</a> is installed on your machine</p>
+			<p>By <span class="highly">enabling</span> this flag the <span class="highly">open ide</span> command will be appended to the clone command and will be executed right after the project is checked out.</p>
+			<p>Use this option only if <a href="https://www.npmjs.com/package/open-ide" target="_blank">open-ide</a> is installed on your machine.</p>
 		</div>
 	</Card>
 </div>
 
 <style>
-	div#configurations {
-
+	.group-name {
+		margin-bottom: 10px;
+		display: block;
 	}
 </style>

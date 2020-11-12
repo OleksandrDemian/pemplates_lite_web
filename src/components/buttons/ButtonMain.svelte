@@ -10,7 +10,7 @@
 
 <style>
 	button {
-		border-radius: 10px;
+		border-radius: var(--border-radius);
 		padding: 8px 16px;
 		cursor: pointer;
 		border: none;

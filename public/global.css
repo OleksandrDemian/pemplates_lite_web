@@ -6,6 +6,9 @@
 
 :root {
     --animation-speed: 0.2s;
+    --border-radius: 10px;
+
+    --main-color: #3481ff;
 }
 
 body {
@@ -26,7 +29,7 @@ input.main:not([type="checkbox"]), select.main {
     width: 100%;
     padding: 6px 15px;
 
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     border: none;
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
     font-size: 16px;
@@ -53,4 +56,19 @@ a {
 
 a:visited {
     color: coral;
+}
+
+.main-color {
+    color: var(--main-color);
+}
+
+.highly {
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    padding: 1px 3px;
+}
+
+::selection {
+    background-color: coral;
 }

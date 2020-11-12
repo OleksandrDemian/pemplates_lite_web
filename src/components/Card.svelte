@@ -10,9 +10,10 @@
 
 <style>
 	div.card {
-		padding: 10px;
+		padding: 20px;
 		margin: 20px 0;
 
-		border-bottom: 2px solid #EEEEEE;
+		box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+		border-radius: var(--border-radius);
 	}
 </style>

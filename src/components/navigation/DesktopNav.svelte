@@ -25,7 +25,9 @@
 	nav > div {
 		margin: 5px 0;
 		width: fit-content;
-		border-bottom: 2px solid transparent;
+		border-bottom: 2px solid white;
+
+		transition: all var(--animation-speed) ease-in-out;
 	}
 
 	nav > div:hover {

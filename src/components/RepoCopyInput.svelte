@@ -34,7 +34,7 @@
 		display: grid;
 		grid-template-columns: 50px 1fr 100px;
 		padding: 5px 10px;
-		border-radius: 10px;
+		border-radius: var(--border-radius);
 		grid-gap: 10px;
 	}
 

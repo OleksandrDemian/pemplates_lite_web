@@ -83,7 +83,7 @@
 						<SearchResult githubRepo={searchResult} />
 					{/each}
 				{:else}
-					<h3>There are no project templates for <b>"{filterValue}"</b></h3>
+					<h3>There are no project templates for <span class="highly">"{filterValue}"</span></h3>
 					<p>
 						If you are sure there are, please let know to it's owner to mark it as template.
 					</p>

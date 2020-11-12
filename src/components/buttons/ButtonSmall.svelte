@@ -30,14 +30,14 @@
 		border: 1px solid white;
 		color: white;
 
-		background-color: coral;
+		background-color: #f57b4e;
 	}
 
 	button {
 		display: inline-block;
 		padding: 5px 10px;
 		margin: 5px 5px 5px 0;
-		border-radius: 10px;
+		border-radius: var(--border-radius);
 		font-size: 12px;
 
 		cursor: pointer;

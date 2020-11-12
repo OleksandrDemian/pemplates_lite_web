@@ -1,7 +1,13 @@
 <script>
 	import DesktopNav from "../components/navigation/DesktopNav.svelte";
 	import MobileNav from "../components/navigation/MobileNav.svelte";
+	import IsMobile from "../store/isMobile";
+
+	let isMobile = IsMobile(771);
 </script>
 
-<DesktopNav />
-<MobileNav />
+{ #if $isMobile }
+	<MobileNav />
+{ :else }
+	<DesktopNav />
+{ /if}
